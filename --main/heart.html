@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Heartbeat</title>
+
+    <style>
+      body {
+  background: black;
+  color: #00ff00;
+  text-align: center;
+  font-family: Arial;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+svg {
+  width: 90%;
+  max-width: 600px;
+}
+
+/* Línea del latido */
+.heartbeat-path {
+  fill: none;
+  stroke: #00ff00;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  /* brillo */
+  filter: drop-shadow(0 0 5px #00ff00)
+          drop-shadow(0 0 15px #00ff00);
+
+  /* animación */
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 2.5s linear infinite;
+}
+
+/* animación de dibujo */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+        </style>
+  
+</head>
+<body>
+
+<h1>Heartbeat</h1>
+
+<svg viewBox="0 0 600 200">
+  <path class="heartbeat-path"
+    d="M0 100 
+       L80 100 
+       L100 80 
+       L120 140 
+       L150 60 
+       L180 100 
+       L260 100
+       C280 60, 320 60, 340 100
+       C360 140, 400 140, 420 100
+       L600 100" />
+</svg>
+
+</body>
+</html>
